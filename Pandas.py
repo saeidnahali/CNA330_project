@@ -15,7 +15,7 @@ print(data.columns)    # prints columns from csv
 
 data = data.dropna()     # removes empty lines
 data = data.where(pd.notnull(data), None)     # removes empty lines
-sql_engine = create_engine('mysql+pymysql://root:@localhost:3306/cna330')     # create database engine
+sql_engine = create_engine('mysql+pymysql://pythoneverything:python123@18.216.19.4:3306/CNA330_project')     # create database engine
 db_connection = sql_engine.connect()  # create database connection
 data.to_sql('diet_data', con=db_connection, if_exists='replace', index=False)     # write the data in to database
 sql = "select * from diet_data limit 50"     # select SQL query
