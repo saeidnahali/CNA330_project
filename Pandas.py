@@ -22,4 +22,6 @@ sql = "select * from diet_data limit 50"     # select SQL query
 data = pd.read_sql(sql, db_connection)     # panda reads data from database
 data.plot(x="calories", y="weight_oz", kind="scatter")     # creates the plot(graph)
 data.plot(x="Date", y="Pounds", kind="bar")     # creates the plot(graph)
+data.plot(x="Date", y="walk", kind="bar")     # creates the plot(graph)
+data.plot(x="Date", y="Pounds", kind="pie")     # creates the plot(graph)
 pp.show()     # show the plot(graph)
