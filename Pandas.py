@@ -24,11 +24,24 @@ data.to_sql('diet_data', con=db_connection, if_exists='replace', index=False)   
 #Queries and reads the database
 sql = "select * from diet_data limit 100"     # select SQL query
 data = pd.read_sql(sql, db_connection)     # panda reads data from database
+
 # Creates various graphs, efect of calories and exercise on changes in Chris Bow weight:
 #data.plot(x="Date", y="Pounds", kind="bar")  # sql = 20(data limit): creates the bar graph, and showing how many pounds gain the person through time.
 #pp.title("Chris Bow diet data on daily pounds\n\nper day")  # graph title.
+
 data.plot(x="Date", y="calories", kind="hist")  # sql = 100(data limit): creates the histograph skewd to the right and showing calories the person eat through time.
 pp.title("Chris Bow diet data on daily calories\n\neat through time")  # graph title.
+
 #data.plot(x="calories", y="weight_oz", kind="box")  # sql = 100(data limit): creates the plot(graph) creates the boxplot graph, which can easly show the average of caloryes eating per day.
 #pp.title("Chris Bow diet data on daily average of\n\ncalories eating per day")  # graph title.
 pp.show()  # show the plot(graph)
+
+# Group Project Source:
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html
+# https://www.tutorialspoint.com/python_pandas/python_pandas_series.htm
+# https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/a/splitting-data-into-related-tables
+# Python Stepik course: https://stepik.org/course/238/promo
+# https://app.slack.com/client/T011FK5513L/G01EMV960J3
+# Canvas: https://rtc.instructure.com
+# https://www.kaggle.com/chrisbow/2018-calorie-exercise-and-weight-changes
+# Tutor: liviu_patrasco@hotmail.com
